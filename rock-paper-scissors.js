@@ -1,4 +1,3 @@
-console.log("Hello World");
 
 // Create a function named getComputerChoice that randomly returns "rock", "paper", or "scissors"
 function getComputerChoice() {
