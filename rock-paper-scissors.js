@@ -16,8 +16,7 @@ function getComputerChoice() {
     }
 }
 // Test that getComputerChoice is working
-let computerChoice = getComputerChoice();
-console.log(computerChoice);
+console.log(getComputerChoice());
 
 // Create a function named getHumanChoice that prompts user for input and returns one of the valid choices, depending on user input
 function getHumanChoice() {
@@ -39,3 +38,24 @@ console.log(getHumanChoice());
 // Create variables for humanScore and computerScore
 let humanScore = 0;
 let computerScore = 0;
+
+// Create a function name playRound that takes humanChoice and computerChoice as parameters
+function playRound(humanChoice, computerChoice) {
+    // Check if human is winner
+    if (
+        (humanChoice === "rock" && computerChoice === "scissors")
+        || (humanChoice === "paper" && computerChoice === "rock")
+        || (humanChoice === "scissors" && computerChoice === "paper")
+    ) {
+        // Print winner message to console and increment humanScore
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+        humanScore ++;
+        // Check for tie
+    }   else if (humanChoice === computerChoice) {
+        console.log("It's a tie!");
+    }   else {
+        // Print winner message and increment computerScore
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+        computerScore ++;
+    }
+}
