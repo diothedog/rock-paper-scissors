@@ -14,5 +14,23 @@ function getComputerChoice() {
     }   else {
         return "scissors";
     }
-
 }
+// Test that getComputerChoice is working
+let computerChoice = getComputerChoice();
+console.log(computerChoice);
+
+// Create a function named getHumanChoice that prompts user for input and returns one of the valid choices, depending on user input
+function getHumanChoice() {
+    // Prompt user for choice and store in humanChoice variable
+    let humanChoice = prompt("Rock, paper, or scissors?");
+    // Convert humanChoice to lowercase
+    humanChoice = humanChoice.toLowerCase()
+    // Test to see if humanChoice matches one of the three valid options
+    if (humanChoice === "rock" || humanChoice == "paper" || humanChoice == "scissors") {
+        return humanChoice;
+    }   else {
+        return "That is not a valid option.";
+    }
+}
+
+console.log(getHumanChoice());
