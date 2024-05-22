@@ -33,4 +33,9 @@ function getHumanChoice() {
     }
 }
 
+// Test getHumanChoice
 console.log(getHumanChoice());
+
+// Create variables for humanScore and computerScore
+let humanScore = 0;
+let computerScore = 0;
