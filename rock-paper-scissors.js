@@ -2,6 +2,9 @@ const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
 
+const results = document.querySelector("#results");
+const score = document.querySelector("#score");
+
 // Create a function named getComputerChoice that randomly returns "rock", "paper", or "scissors"
 function getComputerChoice() {
     // Generate a random number between 0 and 1 and store in randomNumber variable
@@ -45,22 +48,22 @@ function playGame() {
             || (humanChoice === "paper" && computerChoice === "rock")
             || (humanChoice === "scissors" && computerChoice === "paper")
         ) {
-            // Print winner message to console and increment humanScore
-            console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+            // Display results in div and increment humanScore
+            results.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
             humanScore ++;
             // Print score
-            console.log(`Human: ${humanScore} Computer: ${computerScore}`)
+            score.textContent = `Human: ${humanScore} Computer: ${computerScore}`;
             // Check for tie
         }   else if (humanChoice === computerChoice) {
-            console.log("It's a tie!");
+            results.textContent = "It's a tie!";
             // Print score
-            console.log(`Human: ${humanScore} Computer: ${computerScore}`)
+            score.textContent = `Human: ${humanScore} Computer: ${computerScore}`;
         }   else {
-            // Print winner message and increment computerScore
-            console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+            // Print loser message and increment computerScore
+            results.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
             computerScore ++;
             // Print score
-            console.log(`Human: ${humanScore} Computer: ${computerScore}`)
+            score.textContent = `Human: ${humanScore} Computer: ${computerScore}`;
         }
     }
 
