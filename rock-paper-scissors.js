@@ -1,3 +1,6 @@
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
 
 // Create a function named getComputerChoice that randomly returns "rock", "paper", or "scissors"
 function getComputerChoice() {
@@ -15,25 +18,16 @@ function getComputerChoice() {
     }
 }
 
-// Create a function named getHumanChoice that prompts user for input and returns one of the valid choices, depending on user input
-function getHumanChoice() {
-    // Prompt user for choice and store in humanChoice variable
-    let humanChoice = prompt("Rock, paper, or scissors?");
-    // Convert humanChoice to lowercase
-    humanChoice = humanChoice.toLowerCase()
-    // Test to see if humanChoice matches one of the three valid options
-    if (humanChoice === "rock" || humanChoice == "paper" || humanChoice == "scissors") {
-        return humanChoice;
-    }   else {
-        return "That is not a valid option.";
-    }
-}
-
 // Write playGame function that calls playRound for 5 rounds, keeps tracks of the scores, and declares winner at the end
 function playGame() {
     // Create variables for humanScore and computerScore
     let humanScore = 0;
     let computerScore = 0;
+
+    // Get humanChoice from button click and play a round
+    rock.addEventListener("click", () => {
+        playRound("rock", getComputerChoice());
+    });
 
     // Create a function name playRound that takes humanChoice and computerChoice as parameters
     function playRound(humanChoice, computerChoice) {
