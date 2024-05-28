@@ -29,6 +29,14 @@ function playGame() {
         playRound("rock", getComputerChoice());
     });
 
+    paper.addEventListener("click", () => {
+        playRound("paper", getComputerChoice());
+    });
+
+    scissors.addEventListener("click", () => {
+        playRound("scissors", getComputerChoice());
+    });
+
     // Create a function name playRound that takes humanChoice and computerChoice as parameters
     function playRound(humanChoice, computerChoice) {
         // Check if human is winner
