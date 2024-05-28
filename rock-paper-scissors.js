@@ -4,6 +4,7 @@ const scissors = document.querySelector("#scissors");
 
 const results = document.querySelector("#results");
 const score = document.querySelector("#score");
+const gameOver = document.querySelector("#gameOver");
 
 // Create a function named getComputerChoice that randomly returns "rock", "paper", or "scissors"
 function getComputerChoice() {
@@ -65,30 +66,13 @@ function playGame() {
             // Print score
             score.textContent = `Human: ${humanScore} Computer: ${computerScore}`;
         }
-    }
-
-    // // Play 5 rounds
-    // let roundCounter = 0;
-    // while (roundCounter < 5) {
-    //     // Get humanSelection and computerSelection
-    //     let humanSelection = getHumanChoice();
-    //     let computerSelection = getComputerChoice();
-
-    //     // Play a round
-    //     playRound(humanSelection, computerSelection);
-
-    //     // Increment roundCounter
-    //     roundCounter ++;
-    // }
-
-    // // After 5 rounds, declare a winner
-    // if (humanScore > computerScore) {
-    //     console.log("Game over. You win!");
-    // }   else if (computerScore > humanScore) {
-    //     console.log("Game over. You lose.")
-    // }   else {
-    //     console.log("Game over. It's a tie.")
-    // }
+        // Announce a winner once a player reaches 5 points
+        if (humanScore === 5) {
+            gameOver.textContent = "Game over. You win!";
+        }   else if (computerScore === 5) {
+            gameOver.textContent = "Game over. You lose!";
+        }
+    }   
 }
 
 playGame();
