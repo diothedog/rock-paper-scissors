@@ -6,6 +6,10 @@ const results = document.querySelector("#results");
 const score = document.querySelector("#score");
 const gameOver = document.querySelector("#gameOver");
 
+const playAgain = document.createElement("button");
+playAgain.setAttribute("id", "playAgain");
+playAgain.textContent = "Play again";
+
 // Create a function named getComputerChoice that randomly returns "rock", "paper", or "scissors"
 function getComputerChoice() {
     // Generate a random number between 0 and 1 and store in randomNumber variable
@@ -69,8 +73,10 @@ function playGame() {
         // Announce a winner once a player reaches 5 points
         if (humanScore === 5) {
             gameOver.textContent = "Game over. You win!";
+            gameOver.appendChild(playAgain);
         }   else if (computerScore === 5) {
             gameOver.textContent = "Game over. You lose!";
+            gameOver.appendChild(playAgain);
         }
     }   
 }
