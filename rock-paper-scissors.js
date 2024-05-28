@@ -62,28 +62,28 @@ function playGame() {
         }
     }
 
-    // Play 5 rounds
-    let roundCounter = 0;
-    while (roundCounter < 5) {
-        // Get humanSelection and computerSelection
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
+    // // Play 5 rounds
+    // let roundCounter = 0;
+    // while (roundCounter < 5) {
+    //     // Get humanSelection and computerSelection
+    //     let humanSelection = getHumanChoice();
+    //     let computerSelection = getComputerChoice();
 
-        // Play a round
-        playRound(humanSelection, computerSelection);
+    //     // Play a round
+    //     playRound(humanSelection, computerSelection);
 
-        // Increment roundCounter
-        roundCounter ++;
-    }
+    //     // Increment roundCounter
+    //     roundCounter ++;
+    // }
 
-    // After 5 rounds, declare a winner
-    if (humanScore > computerScore) {
-        console.log("Game over. You win!");
-    }   else if (computerScore > humanScore) {
-        console.log("Game over. You lose.")
-    }   else {
-        console.log("Game over. It's a tie.")
-    }
+    // // After 5 rounds, declare a winner
+    // if (humanScore > computerScore) {
+    //     console.log("Game over. You win!");
+    // }   else if (computerScore > humanScore) {
+    //     console.log("Game over. You lose.")
+    // }   else {
+    //     console.log("Game over. It's a tie.")
+    // }
 }
 
 playGame();
