@@ -4,11 +4,9 @@ const scissors = document.querySelector("#scissors");
 
 const results = document.querySelector("#results");
 const score = document.querySelector("#score");
-const gameOver = document.querySelector("#gameOver");
 
-const playAgain = document.createElement("button");
-playAgain.setAttribute("id", "playAgain");
-playAgain.textContent = "Play again";
+let humanScore = 0;
+let computerScore = 0;
 
 // Create a function named getComputerChoice that randomly returns "rock", "paper", or "scissors"
 function getComputerChoice() {
@@ -28,10 +26,6 @@ function getComputerChoice() {
 
 // Write playGame function that calls playRound for 5 rounds, keeps tracks of the scores, and declares winner at the end
 function playGame() {
-    // Create variables for humanScore and computerScore
-    let humanScore = 0;
-    let computerScore = 0;
-
     // Get humanChoice from button click and play a round
     rock.addEventListener("click", () => {
         playRound("rock", getComputerChoice());
@@ -55,7 +49,7 @@ function playGame() {
         ) {
             // Display results in div and increment humanScore
             results.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
-            humanScore ++;
+            humanScore++;
             // Print score
             score.textContent = `Human: ${humanScore} Computer: ${computerScore}`;
             // Check for tie
@@ -66,19 +60,24 @@ function playGame() {
         }   else {
             // Print loser message and increment computerScore
             results.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
-            computerScore ++;
+            computerScore++;
             // Print score
             score.textContent = `Human: ${humanScore} Computer: ${computerScore}`;
         }
         // Announce a winner once a player reaches 5 points
         if (humanScore === 5) {
-            gameOver.textContent = "Game over. You win!";
-            gameOver.appendChild(playAgain);
+            alert("Game over. You win!");
+            resetGame();
         }   else if (computerScore === 5) {
-            gameOver.textContent = "Game over. You lose!";
-            gameOver.appendChild(playAgain);
+            alert("Game over. You lose!");
+            resetGame();
         }
     }   
+}
+
+function resetGame() {
+    humanScore = 0;
+    computerScore = 0;
 }
 
 playGame();
