@@ -49,17 +49,20 @@ function playGame() {
         ) {
             // Display results in div and increment humanScore
             results.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+            results.style.color = "green";
             humanScore++;
             // Print score
             score.textContent = `Human: ${humanScore} Computer: ${computerScore}`;
             // Check for tie
         }   else if (humanChoice === computerChoice) {
             results.textContent = "It's a tie!";
+            results.style.color = "white";
             // Print score
             score.textContent = `Human: ${humanScore} Computer: ${computerScore}`;
         }   else {
             // Print loser message and increment computerScore
             results.textContent = `You lose! ${computerChoice} beats ${humanChoice}`;
+            results.style.color = "red";
             computerScore++;
             // Print score
             score.textContent = `Human: ${humanScore} Computer: ${computerScore}`;
